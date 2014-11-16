@@ -58,13 +58,13 @@ class DropBoxAuth extends Authenticate{
 
 // Authenticator when Dropbox Image Downloader already has account setup
 class NoAuthRequired extends DropBoxAuth{
-	private $choice='n';
+	private $choice='%';
 	public function __construct($input, $appInfo){
 		parent::__construct($input, $appInfo);
 	}
 
 	protected function authenticate(){
-		println("\nEnter 'e' to Change Configuration, else press any other character : ");
+		println("\nEnter 'e' to Change Configuration, else press any other character to continue : ");
 		do {
 			$this->choice = fgetc(STDIN);
 		} while ( trim($this->choice) == '' );
@@ -74,9 +74,9 @@ class NoAuthRequired extends DropBoxAuth{
 		}
 	}
 	protected function isDone(){
-		if ($this->choice == 'e'){
+		if ($this->choice == 'e' || $this->choice == 'E'){
 			return parent::isDone();
-		}else if ($this->choice == 'n'){
+		}else if ($this->choice == '%'){
 			return false;
 		}else{
 			return true;
