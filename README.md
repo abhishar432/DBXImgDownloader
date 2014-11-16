@@ -8,7 +8,7 @@ Requirements:
 - Mac/Linux
 - Dropbox Account
 
-Steps for Initial Setup
+Steps for Initial Setup:
 - Install PHP.
 - Open Terminal in Mac/Linux and go to the root directory for application.
 - Make Main.php executable by running 'chmod +x Main.php' in the terminal.
