@@ -69,12 +69,12 @@ class NoAuthRequired extends DropBoxAuth{
 			$this->choice = fgetc(STDIN);
 		} while ( trim($this->choice) == '' );
 
-		if ($this->choice == 'e' || $this->choice == 'E'){
+		if ($this->useParent()){
 			parent::authenticate();
 		}
 	}
 	protected function isDone(){
-		if ($this->choice == 'e' || $this->choice == 'E'){
+		if ($this->useParent()){
 			return parent::isDone();
 		}else if ($this->choice == '%'){
 			return false;
@@ -84,10 +84,14 @@ class NoAuthRequired extends DropBoxAuth{
 	}
 
 	public function hasChanged(){
-		if ($this->choice == 'e'){
+		if ($this->useParent()){
 			return parent::hasChanged();
 		}else
 		return false;
+	}
+	
+	private function useParent(){
+		return $this->choice == 'e' || $this->choice == 'E';
 	}
 }
 
