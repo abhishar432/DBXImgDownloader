@@ -69,7 +69,7 @@ class NoAuthRequired extends DropBoxAuth{
 			$this->choice = fgetc(STDIN);
 		} while ( trim($this->choice) == '' );
 
-		if ($this->choice == 'e'){
+		if ($this->choice == 'e' || $this->choice == 'E'){
 			parent::authenticate();
 		}
 	}
