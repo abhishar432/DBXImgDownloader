@@ -1,7 +1,7 @@
 DBXImgDownloader
 ================
 
-CLI application for downloading images (JPEG, GIF, SVG, RAW, etc.) from dropbox account
+CLI application for downloading images (JPEG, GIF, SVG, RAW, etc.) from dropbox account. Output directory for the downloaded images is structured as <ACCOUNT_NAME>/YEAR/MONTH/DAY format.
 
 Requirements:
 - PHP 5.4.24 (cli)
